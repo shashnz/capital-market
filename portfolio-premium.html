@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABM20103 E-Portfolio | Ata Plus ECF (v3 premium)</title>
+<script>document.documentElement.classList.add('js')</script>
+<!--
+  HOW TO EDIT (GitHub):
+  - Search "TODO" to find what still needs filling in (yellow boxes on the page).
+  - To publish with GitHub Pages, rename this file to index.html.
+  - All pictures are drawn with SVG/CSS in this file (no copyright images). To add your own photo:
+    upload it to the repo and add <img src="photo.jpg" alt="..."> where you want it.
+-->
+<style>
+:root{
+  --navy:#16305f; --navy2:#0d1f40; --teal:#0E7C86; --teal2:#17a2ad; --gold:#D9A21B; --gold2:#f3c75a;
+  --ink:#1c2330; --mute:#5b6577; --bg:#f4f6fb; --card:#ffffff; --line:#dfe3ec;
+  --c1:#2B6CB0; --c2:#2F855A; --c3:#B7791F; --c4:#6B46C1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);line-height:1.65;font-size:16px;background-color:var(--bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%2316305f' stroke-opacity='.07' stroke-width='1.2'%3E%3Crect x='20' y='20' width='40' height='40'/%3E%3Crect x='20' y='20' width='40' height='40' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3C/g%3E%3C/svg%3E");}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--gold),var(--teal2));z-index:50}
+
+/* HERO */
+header.hero{position:relative;overflow:hidden;color:#fff;padding:72px 0 120px;
+  background:radial-gradient(1200px 500px at 85% -10%,rgba(23,162,173,.55),transparent 60%),linear-gradient(135deg,var(--navy2),var(--navy) 60%,#1d4a7a)}
+.hero .pat{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
+.tag{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:99px;font-size:12.5px;letter-spacing:.06em}
+.hero h1{font-size:clamp(28px,4.6vw,46px);line-height:1.15;margin:16px 0 12px}
+.hero h1 span{color:var(--gold2)}
+.hero p{color:#d6def0;margin:6px 0}
+.arabic{font-family:"Amiri","Traditional Arabic","Scheherazade New",serif;font-size:26px;color:var(--gold2);margin:0 0 4px;direction:rtl}
+.hero .cta{display:inline-block;margin-top:18px;background:var(--gold);color:#1b1500;padding:11px 22px;border-radius:99px;text-decoration:none;font-weight:700}
+.hero .cta:hover{background:var(--gold2)}
+.hero-art svg{width:100%;height:auto;display:block}
+.wave{position:absolute;left:0;bottom:-1px;width:100%;height:70px}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero-art{order:-1;max-width:420px}}
+.flow{stroke-dasharray:6 7;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-26}}
+.pulse{animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{50%{transform:scale(1.25);opacity:.75}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:2px;overflow-x:auto;padding:0 20px}
+nav a{flex:none;padding:14px 12px;font-size:13.5px;color:var(--navy);text-decoration:none;font-weight:600;border-bottom:3px solid transparent}
+nav a:hover,nav a.on{border-color:var(--gold);color:var(--teal)}
+
+/* LAYOUT */
+section{padding:54px 0 6px}
+.shead{display:flex;align-items:center;gap:14px;margin-bottom:4px}
+.badge{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:800;font-family:Georgia,serif;font-size:19px;background:linear-gradient(135deg,var(--navy),var(--teal));box-shadow:0 6px 16px rgba(22,48,95,.25)}
+section h2{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:0}
+.sub{color:var(--mute);margin:2px 0 22px;font-size:14px}
+h3{color:var(--navy);margin:28px 0 8px;font-size:20px}
+h4{margin:14px 0 6px;font-size:16px;color:var(--teal)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:14px 0;box-shadow:0 4px 16px rgba(22,48,95,.05)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.grid2 .card{margin:0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff;font-weight:600}
+tr:nth-child(even) td{background:#fafbfe}
+.tablewrap{overflow-x:auto;border-radius:12px;margin:12px 0;box-shadow:0 4px 16px rgba(22,48,95,.05)}
+.table-min{min-width:640px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:99px;font-weight:700}
+.same{background:#e3f5ea;color:#1d6b3e}.diff{background:#fde8e4;color:#a1311d}.new{background:#fff1d6;color:#8a5a00}
+.todo{background:#fff3b0;border:1px dashed #c9a400;border-radius:6px;padding:1px 7px;font-size:.92em}
+.note{border-left:4px solid var(--gold);background:#fff9ea;padding:10px 14px;border-radius:0 10px 10px 0;font-size:14.5px;margin:14px 0}
+.diagram{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;margin:14px 0;box-shadow:0 4px 16px rgba(22,48,95,.05)}
+.diagram svg{display:block;min-width:760px;width:100%;height:auto}
+.fig{font-size:13px;color:var(--mute);margin:6px 2px 0}
+ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.kpi{background:linear-gradient(160deg,#fff,#eef3fb);border:1px solid var(--line);border-radius:16px;padding:16px;position:relative;overflow:hidden}
+.kpi:after{content:"";position:absolute;right:-18px;top:-18px;width:70px;height:70px;border-radius:50%;background:rgba(217,162,27,.18)}
+.kpi b{display:block;font-size:26px;color:var(--navy);font-family:Georgia,serif}
+.kpi span{font-size:13px;color:var(--mute)}
+.bars .row{display:grid;grid-template-columns:210px 1fr 62px;gap:10px;align-items:center;margin:10px 0;font-size:14px}
+.bars .track{background:#eaeef6;border-radius:8px;height:24px;overflow:hidden}
+.bars .fill{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:8px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.bars .fill.alt{background:linear-gradient(90deg,var(--navy),var(--c1))}
+@media(max-width:560px){.bars .row{grid-template-columns:1fr 1fr 58px}.bars .row .lab{grid-column:1/-1}}
+.refs p{padding-left:2em;text-indent:-2em;margin:10px 0}
+.team td:first-child{white-space:nowrap}
+footer{margin-top:60px;background:var(--navy2);color:#c7d1ea;padding:30px 0;font-size:14px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+
+/* stepper */
+.ctrl{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.btn{border:0;background:var(--navy);color:#fff;padding:9px 16px;border-radius:99px;font-weight:600;cursor:pointer;font-size:14px}
+.btn:hover{background:var(--teal)}.btn.alt{background:#e7ecf6;color:var(--navy)}.btn.alt:hover{background:#d5deef}
+ol.steps{padding-left:0;list-style:none;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:12px 14px 12px 52px;margin:8px 0;background:#fff;border:1px solid var(--line);border-radius:14px;cursor:pointer;transition:.25s}
+ol.steps li:before{content:counter(s);position:absolute;left:12px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+ol.steps li.active{border-color:var(--gold);background:#fffaf0;box-shadow:0 6px 18px rgba(217,162,27,.25);transform:translateX(6px)}
+ol.steps li.active:before{background:var(--gold);color:#1b1500}
+.node{transition:transform .3s;transform-box:fill-box;transform-origin:center}
+.node.active{transform:scale(1.5)}
+.node.active circle{fill:var(--gold)}.node.active text{fill:#1b1500}
+.arr{transition:stroke .3s,stroke-width .3s}
+.arr.active{stroke:var(--gold)!important;stroke-width:4.5}
+
+/* tools */
+.tool{background:linear-gradient(160deg,#fff,#f0f5fc);border:1px solid var(--line);border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 8px 24px rgba(22,48,95,.08)}
+.tool h4{margin-top:0;font-size:17px}
+.tool label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin:10px 0 4px}
+.tool input,.tool select{width:100%;padding:9px 11px;border:1px solid #c9d2e3;border-radius:10px;font-size:15px;background:#fff}
+.tool input[type=range]{padding:0}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.res{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.res div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--mute)}
+.res b{display:block;font-size:20px;color:var(--navy)}
+.res .bad b{color:#a1311d}.res .good b{color:#1d6b3e}
+.verdict{margin-top:12px;padding:12px 14px;border-radius:12px;font-weight:600}
+.verdict.ok{background:#e3f5ea;color:#1d6b3e}.verdict.no{background:#fde8e4;color:#a1311d}
+.split{height:26px;border-radius:99px;overflow:hidden;display:flex;margin-top:12px;background:#eaeef6}
+.split i{display:block;height:100%;transition:width .4s}
+
+/* map */
+.chip{cursor:pointer}.chip rect{transition:.2s}.chip:hover rect,.chip:focus rect,.chip.sel rect{stroke-width:3;fill:#fffbe8}
+#mapPanel{border:2px dashed var(--gold);background:#fffaf0;border-radius:14px;padding:14px 16px;margin-top:10px;min-height:70px}
+
+/* timeline */
+.timeline{position:relative;margin:20px 0 10px;padding-left:28px;border-left:3px solid var(--teal)}
+.tl{position:relative;margin:0 0 22px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.tl:before{content:"";position:absolute;left:-39px;top:16px;width:16px;height:16px;background:var(--gold);border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 2px var(--teal)}
+.tl b{color:var(--navy)}.tl small{color:var(--mute)}
+
+/* issues */
+details.issue{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:0}
+details.issue summary{cursor:pointer;padding:14px 18px;font-weight:700;color:var(--navy);list-style:none;display:flex;gap:10px;align-items:center}
+details.issue summary::-webkit-details-marker{display:none}
+details.issue summary:after{content:"+";margin-left:auto;font-size:22px;color:var(--teal)}
+details.issue[open] summary:after{content:"−"}
+details.issue .in{padding:0 18px 16px;font-size:15px}
+
+/* quiz */
+.q{margin:14px 0}.q p{font-weight:600;margin:0 0 6px}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c9d2e3;border-radius:10px;padding:9px 12px;margin:6px 0;cursor:pointer;font-size:15px}
+.opt:hover{background:#f0f5fc}.opt.right{background:#e3f5ea;border-color:#2F855A}.opt.wrong{background:#fde8e4;border-color:#C53030}
+.why{font-size:13.5px;color:var(--mute);margin-top:4px;display:none}
+@media print{nav,#progress{display:none}.todo{background:none;border:none}.js .rv{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+
+/* ===== V3 premium theme ===== */
+:root{--navy:#0f2342;--navy2:#0a1a33;--gold:#B98A4E;--gold2:#dcb47c;--bg:#faf8f4;--teal:#2f6f73;--teal2:#4a9a9f}
+body{background-color:var(--bg)}
+.topbar{background:var(--navy2);color:#cfd8ea;font-size:12.5px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.topbar b{color:var(--gold2);font-weight:600}
+.brandbar{background:#fff;border-bottom:1px solid var(--line)}
+.brandbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+.brand svg{width:40px;height:40px}
+.brand b{font-family:Georgia,serif;font-size:19px;letter-spacing:.08em;display:block;line-height:1}
+.brand small{font-size:10.5px;letter-spacing:.28em;color:var(--gold)}
+.gbtn{background:linear-gradient(135deg,#c79a5f,#a97a3f);color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;box-shadow:0 6px 16px rgba(169,122,63,.3)}
+.hero3{background:linear-gradient(100deg,#fffdf9 0%,#faf6ee 55%,#efe6d6 100%);position:relative;overflow:hidden}
+.hero3 .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding-top:56px;padding-bottom:70px}
+.eyebrow{font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+.hero3 h1{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:14px 0;color:var(--navy)}
+.hero3 h1 em{color:var(--gold);font-style:normal}
+.hero3 p.lead{color:var(--mute);max-width:520px;font-size:16.5px}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.b-dark{background:var(--navy);color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14.5px}
+.b-out{border:1px solid #cdbf9f;color:var(--navy);padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14.5px;background:#fff}
+.proof{display:flex;gap:26px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.proof div{font-size:13px;color:var(--mute);line-height:1.3}.proof b{display:block;font-size:22px;color:var(--navy);font-family:Georgia,serif}
+.proof .sep{width:1px;height:38px;background:#d9cfb9}
+.heroimg{position:relative}
+.heroimg .frame{border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#16305f,#0a1a33);box-shadow:0 24px 50px rgba(15,35,66,.28)}
+.heroimg .frame svg{display:block;width:100%;height:auto}
+.float1{position:absolute;left:-26px;bottom:-26px;width:230px;background:var(--navy);color:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 16px 36px rgba(10,26,51,.4);border:1px solid rgba(220,180,124,.35)}
+.float1 small{color:#aebbd6;font-size:11.5px}.float1 b{display:block;font-family:Georgia,serif;font-size:24px;margin:2px 0}
+.float1 .up{color:#7fe0a6;font-size:12px}
+.float2{position:absolute;right:-8px;top:22px;background:#fff;border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--navy);box-shadow:0 10px 26px rgba(10,26,51,.18);display:flex;gap:8px;align-items:center;font-weight:600}
+.float2 i{font-style:normal;font-family:"Amiri",serif;font-size:18px;color:var(--gold)}
+@media(max-width:860px){.hero3 .wrap{grid-template-columns:1fr}.float1{left:8px}.float2{right:8px}}
+.strip{background:#fff;border:1px solid var(--line);border-radius:16px;margin:-34px auto 0;position:relative;z-index:2;padding:16px 22px;box-shadow:0 10px 30px rgba(15,35,66,.08);max-width:1040px}
+.strip p{text-align:center;font-size:11.5px;letter-spacing:.2em;color:var(--mute);margin:0 0 10px}
+.strip div{display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px 22px;font-family:Georgia,serif;color:#6b7385;font-size:15px}
+.strip span:nth-child(2n){font-weight:700;color:var(--navy)}
+.sechead{text-align:center;margin:56px 0 24px}
+.sechead .eyebrow{display:block;margin-bottom:6px}.sechead h2{font-size:clamp(24px,3.4vw,34px);margin:0;color:var(--navy)}.sechead p{color:var(--mute);margin:6px 0 0}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.svc a{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 16px;text-align:center;text-decoration:none;color:var(--ink);transition:.25s;display:block}
+.svc a:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(15,35,66,.12);border-color:var(--gold2)}
+.svc svg{width:44px;height:44px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.svc b{display:block;font-family:Georgia,serif;font-size:17px;color:var(--navy);margin:8px 0 4px}
+.svc span{font-size:13px;color:var(--mute);display:block}.svc em{display:block;margin-top:10px;font-style:normal;font-size:12.5px;font-weight:700;color:var(--navy)}
+.band{background:var(--navy);color:#fff;border-radius:16px;padding:26px 18px;margin:22px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;text-align:center}
+.band div+div{border-left:1px solid rgba(255,255,255,.14)}
+.band b{display:block;font-family:Georgia,serif;font-size:30px;color:#fff}.band span{font-size:13px;color:#b9c6e0}
+@media(max-width:600px){.band div+div{border-left:0}}
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center;margin:50px 0}
+.about .pic{position:relative}.about .pic svg{width:100%;height:auto;border-radius:20px;box-shadow:0 18px 40px rgba(15,35,66,.2);display:block}
+.about .seal{position:absolute;right:-12px;top:-16px;width:104px;height:104px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;text-align:center;font-size:11px;letter-spacing:.14em;font-weight:700;border:4px solid var(--bg)}
+.about h2{font-size:clamp(24px,3.2vw,34px);margin:6px 0 10px;color:var(--navy)}.about h2 em{color:var(--gold);font-style:normal}
+.about ul{list-style:none;padding:0;display:flex;gap:10px;flex-wrap:wrap}.about li{font-size:13px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 12px}
+.quote{background:#fff;border:1px solid #eadfc8;border-radius:16px;padding:18px 20px;margin-top:14px}
+.quote q{display:block;font-family:Georgia,serif;font-size:18px;color:var(--navy);quotes:none;line-height:1.4}.quote small{color:var(--mute)}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.ins{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.ins a{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--ink);transition:.25s}
+.ins a:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(15,35,66,.12)}
+.ins svg{display:block;width:100%;height:auto}.ins div{padding:14px 18px 18px}
+.ins small{color:var(--gold);font-weight:700;letter-spacing:.12em;font-size:11px}.ins b{display:block;font-family:Georgia,serif;font-size:18px;color:var(--navy);margin:4px 0}.ins p{margin:0;font-size:13.5px;color:var(--mute)}
+.cta3{margin:56px 0 10px;border-radius:18px;background:linear-gradient(110deg,#0a1a33,#16305f);color:#fff;padding:34px 36px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta3:after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;border:2px solid rgba(220,180,124,.25);box-shadow:0 0 0 30px rgba(220,180,124,.07)}
+.cta3 h2{font-size:clamp(22px,3vw,30px);margin:0 0 6px}.cta3 p{margin:0;color:#b9c6e0}.cta3 a{position:relative;z-index:1}
+footer.f3{background:var(--navy2);color:#aebbd6;margin-top:60px;padding:44px 0 20px;font-size:14px}
+.f3 .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:26px}
+.f3 h5{color:#fff;margin:0 0 10px;font-size:14px}.f3 a{display:block;color:#aebbd6;text-decoration:none;margin:5px 0}.f3 a:hover{color:var(--gold2)}
+.f3 .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:14px;font-size:12.5px}
+@media(max-width:760px){.f3 .cols{grid-template-columns:1fr 1fr}}
+nav a:hover,nav a.on{border-color:var(--gold);color:var(--gold)}
+th{background:var(--navy)}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="topbar"><div class="wrap"><span>✦ ABM20103 Islamic Capital Market &nbsp;·&nbsp; <b>E-Portfolio (30%)</b></span><span>Group of 8 &nbsp;·&nbsp; Submission <b>21 December 2026</b></span></div></div>
+<div class="brandbar"><div class="wrap"><a class="brand" href="#home"><svg viewBox="0 0 40 40"><path d="M20 3 L37 36 H3 Z" fill="none" stroke="#B98A4E" stroke-width="2.4"/><path d="M20 12 L30 33 H10 Z" fill="none" stroke="#0f2342" stroke-width="2"/><circle cx="20" cy="26" r="3" fill="#B98A4E"/></svg><span><b>ATA PLUS</b><small>CASE PORTFOLIO</small></span></a><a class="gbtn" href="#s1">Start reading →</a></div></div>
+<header class="hero3" id="home"><div class="wrap">
+ <div>
+  <span class="eyebrow">ISLAMIC EQUITY CROWDFUNDING · CASE STUDY</span>
+  <h1>Navigating Islamic Equity Crowdfunding: <em>Ata Plus</em> in Malaysia</h1>
+  <p class="lead">A critical review of Ramli, Abdullah &amp; Alam (2025): how a Shariah-based crowdfunding platform works, what the data says, and what the Islamic Capital Market should do next.</p>
+  <div class="btnrow"><a class="b-dark" href="#s1">Start Section i →</a><a class="b-out" href="#taskA">See the structure</a></div>
+  <div class="proof"><div><b>8</b>team members</div><span class="sep"></span><div><b>3</b>tasks: A, B, C</div><span class="sep"></span><div><b>6</b>APA references</div><span class="sep"></span><div><b>5</b>interactive tools</div></div>
+ </div>
+ <div class="heroimg">
+  <div class="frame"><svg viewBox="0 0 440 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+   <defs><linearGradient id="dome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dcb47c"/><stop offset="1" stop-color="#B98A4E"/></linearGradient><pattern id="p3" width="60" height="60" patternUnits="userSpaceOnUse"><g fill="none" stroke="#fff" stroke-opacity=".08"><rect x="15" y="15" width="30" height="30"/><rect x="15" y="15" width="30" height="30" transform="rotate(45 30 30)"/></g></pattern></defs>
+   <rect width="440" height="340" fill="url(#p3)"/>
+   <circle cx="360" cy="60" r="38" fill="#dcb47c"/><circle cx="374" cy="53" r="33" fill="#12294f"/>
+   <g stroke="#9fd0d4" stroke-width="2" fill="none" class="flow"><path d="M50,50 Q130,140 215,205"/><path d="M130,28 Q170,120 215,205"/><path d="M230,22 Q225,110 215,205"/><path d="M310,34 Q270,120 215,205"/></g>
+   <g fill="#4a9a9f" stroke="#fff" stroke-width="2"><circle class="pulse" cx="50" cy="50" r="11"/><circle class="pulse" cx="130" cy="28" r="11" style="animation-delay:.5s"/><circle class="pulse" cx="230" cy="22" r="11" style="animation-delay:1s"/><circle class="pulse" cx="310" cy="34" r="11" style="animation-delay:1.5s"/></g>
+   <g transform="translate(0,-18)">
+        <g>
+          <rect x="30" y="215" width="14" height="95" fill="#0d1f40"/><path d="M30,215 l7,-26 l7,26z" fill="url(#dome)"/>
+          <rect x="380" y="225" width="14" height="85" fill="#0d1f40"/><path d="M380,225 l7,-24 l7,24z" fill="url(#dome)"/>
+          <rect x="70" y="255" width="300" height="55" fill="#0d1f40"/>
+          <path d="M150,255 a70,70 0 0 1 140,0z" fill="url(#dome)"/>
+          <rect x="217" y="165" width="6" height="20" fill="#f3c75a"/><circle cx="220" cy="162" r="6" fill="#f3c75a"/>
+          <g fill="#17a2ad"><rect x="95" y="275" width="20" height="35" rx="10"/><rect x="325" y="275" width="20" height="35" rx="10"/><rect x="205" y="270" width="30" height="40" rx="15"/></g>
+        </g>
+        
+        <g><rect x="130" y="300" width="180" height="44" rx="6" fill="#fff" opacity=".95"/>
+          <path d="M122,300 h196 l-12,-22 h-172z" fill="#c53030"/><path d="M158,278 l-6,22 M194,278 l-3,22 M230,278 l3,22 M266,278 l6,22" stroke="#fff" stroke-width="3"/>
+          <text x="220" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#16305f" font-family="system-ui">SME</text></g>
+        </g>
+  </svg></div>
+  <div class="float2"><i>مضاربة</i> Mudharabah + Wakalah</div>
+  <div class="float1"><small>Islamic AUM, 2025 (SC)</small><b>RM274.01bn</b><span class="up">▲ 11.35% vs 2024</span>
+   <svg viewBox="0 0 200 40" width="100%" style="margin-top:6px"><polyline points="0,34 40,28 80,30 120,18 160,12 200,4" fill="none" stroke="#dcb47c" stroke-width="2.5" stroke-linecap="round"/><circle cx="200" cy="4" r="3.5" fill="#dcb47c"/></svg></div>
+ </div>
+</div></header>
+<div class="wrap"><div class="strip rv"><p>BUILT ON THESE SOURCES</p><div><span>Ramli et al. (2025)</span><span>SC FAQ (2024)</span><span>SC Annual Report 2025</span><span>Kamaruddin et al. (2023)</span><span>Ashari et al. (2026)</span></div></div></div>
+
+<nav><div class="wrap">
+  <a href="#home">Home</a><a href="#team">Team</a><a href="#s1">i Intro</a><a href="#s2">ii Review</a><a href="#taskA">A Structure</a><a href="#taskB">B Data</a><a href="#taskC">C Map</a><a href="#time">Timeline</a><a href="#s4">iv ICM Link</a><a href="#s5">v Reflection</a><a href="#quiz">Quiz</a><a href="#refs">References</a>
+</div></nav>
+
+<main>
+
+<section id="explore" style="padding-top:20px"><div class="wrap">
+ <div class="sechead rv"><span class="eyebrow">EXPLORE THE PORTFOLIO</span><h2>Everything the rubric asks for, in one place</h2><p>Click a card to jump to that part of the portfolio.</p></div>
+ <div class="svc rv"><a href="#s1"><svg viewBox="0 0 48 48"><path d="M10 38V10h22l6 6v22z M16 20h16 M16 27h16 M16 33h10"/></svg><b>Introduction</b><span>Article, objective and problem statement</span><em>Open →</em></a><a href="#s2"><svg viewBox="0 0 48 48"><path d="M24 8l4 10h10l-8 7 3 11-9-6-9 6 3-11-8-7h10z"/></svg><b>Critical Review</b><span>Method, findings and literature comparison</span><em>Open →</em></a><a href="#taskA"><svg viewBox="0 0 48 48"><path d="M8 24h10 M30 24h10 M18 14h12v20H18z M24 8v6 M24 34v6"/></svg><b>Task A: Structure</b><span>Mudharabah and wakalah flow in 7 steps</span><em>Open →</em></a><a href="#taskB"><svg viewBox="0 0 48 48"><path d="M10 38V22 M20 38V14 M30 38V26 M40 38V8 M6 38h38"/></svg><b>Task B: Data</b><span>Article limits vs SC FAQ and AR 2025</span><em>Open →</em></a><a href="#taskC"><svg viewBox="0 0 48 48"><path d="M24 8a5 5 0 1 0 0 .1 M10 36a5 5 0 1 0 0 .1 M38 36a5 5 0 1 0 0 .1 M22 13L12 32 M26 13l10 19 M15 36h18"/></svg><b>Task C: Map</b><span>Regulators, Shariah bodies and standards</span><em>Open →</em></a><a href="#s4"><svg viewBox="0 0 48 48"><path d="M24 6v6 M24 36v6 M6 24h6 M36 24h6 M24 16a8 8 0 1 0 .1 0"/></svg><b>Issues and Future</b><span>Challenges and 3 recommendations</span><em>Open →</em></a></div>
+ <div class="band rv"><div><b data-count="2747.79" data-dec="2" data-pre="RM" data-suf="bn">0</b><span>Total ICM, end-2025</span></div><div><b data-count="63.7" data-dec="2" data-suf="%">0</b><span>Share of capital market</span></div><div><b data-count="128" data-dec="0">0</b><span>Registered Shariah advisers</span></div><div><b data-count="20" data-dec="0" data-pre="RM" data-suf="m">0</b><span>ECF issuer lifetime cap (SC FAQ)</span></div></div>
+ <div class="about">
+  <div class="pic rv"><svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="440" height="300" fill="#efe6d6"/><rect y="200" width="440" height="100" fill="#0f2342"/>
+   <g><rect x="40" y="70" width="110" height="130" rx="8" fill="#fff"/><path d="M48 100h94M48 120h70M48 140h86" stroke="#B98A4E" stroke-width="4" stroke-linecap="round"/><circle cx="95" cy="170" r="12" fill="#2f6f73"/></g>
+   <g><rect x="290" y="70" width="110" height="130" rx="8" fill="#fff"/><path d="M298 100h94M298 120h70M298 140h86" stroke="#2f6f73" stroke-width="4" stroke-linecap="round"/><circle cx="345" cy="170" r="12" fill="#B98A4E"/></g>
+   <g stroke="#B98A4E" stroke-width="3" fill="none" class="flow"><path d="M150 135 H290"/></g>
+   <circle cx="220" cy="135" r="30" fill="#0f2342"/><text x="220" y="131" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="system-ui">ATA</text><text x="220" y="146" text-anchor="middle" font-size="11" font-weight="700" fill="#dcb47c" font-family="system-ui">PLUS</text>
+   <text x="95" y="230" text-anchor="middle" font-size="13" fill="#fff" font-family="system-ui">Issuer (mudharib)</text><text x="345" y="230" text-anchor="middle" font-size="13" fill="#fff" font-family="system-ui">Investors (rabbul mal)</text>
+   <text x="220" y="262" text-anchor="middle" font-size="12" fill="#dcb47c" font-family="system-ui" letter-spacing="2">PEOPLE · PLANS · PROGRESS</text></svg><div class="seal">SHARIAH<br>FRIENDLY?</div></div>
+  <div class="rv"><span class="eyebrow">ABOUT THIS PORTFOLIO</span><h2>More than a review. A <em>practical analysis</em>.</h2>
+   <p>We read the Ata Plus case closely, check its numbers against the latest Securities Commission data, map who regulates and advises the platform, and turn the gaps into recommendations.</p>
+   <ul><li>Qualitative case study</li><li>SC data checked</li><li>Interactive tools</li></ul>
+   <div class="quote"><q>Ata Plus has no Shariah advisor, so it is better called Shariah-friendly than fully Shariah-compliant.</q><small>Our key finding, from Ramli et al. (2025, pp. 49, 51)</small></div>
+   <p style="margin-top:14px"><a class="b-dark" href="#s2">Read the review →</a></p></div>
+ </div>
+ <div class="sechead rv"><span class="eyebrow">KEY TAKEAWAYS</span><h2>Three things to remember</h2><p>The short version for the team and the lecturer.</p></div>
+ <div class="ins rv">
+  <a href="#taskB"><svg viewBox="0 0 300 130"><defs><linearGradient id="g0f2342" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f2342"/><stop offset="1" stop-color="#2f6f73"/></linearGradient></defs><rect width="300" height="130" fill="url(#g0f2342)"/><g fill="#dcb47c" opacity=".9"><rect x="60" y="60" width="26" height="70"/><rect x="100" y="40" width="26" height="90"/><rect x="140" y="70" width="26" height="60"/><rect x="180" y="30" width="26" height="100"/><rect x="220" y="55" width="26" height="75"/></g></svg><div><small>DATA</small><b>The issuer cap has moved on</b><p>RM3m in 12 months in the article, now RM20m over the issuer's lifetime (SC FAQ, 2024).</p></div></a>
+  <a href="#taskC"><svg viewBox="0 0 300 130"><defs><linearGradient id="gB98A4E" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B98A4E"/><stop offset="1" stop-color="#0f2342"/></linearGradient></defs><rect width="300" height="130" fill="url(#gB98A4E)"/><circle cx="150" cy="70" r="40" fill="#fff" opacity=".18"/><path d="M110 100a40 40 0 0 1 80 0z" fill="#dcb47c"/><rect x="146" y="40" width="8" height="18" fill="#dcb47c"/></svg><div><small>GOVERNANCE</small><b>The Shariah gap is fixable</b><p>Registered Shariah advisers grew from 101 to 128 in one year (SC, 2026).</p></div></a>
+  <a href="#s4"><svg viewBox="0 0 300 130"><defs><linearGradient id="g2f6f73" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6f73"/><stop offset="1" stop-color="#16305f"/></linearGradient></defs><rect width="300" height="130" fill="url(#g2f6f73)"/><g fill="none" stroke="#fff" stroke-width="2" opacity=".75"><circle cx="150" cy="65" r="34"/><circle cx="90" cy="95" r="14"/><circle cx="215" cy="42" r="14"/><circle cx="215" cy="98" r="14"/><path d="M118 75L100 90 M182 55L205 46 M182 78L205 92"/></g><circle cx="150" cy="65" r="12" fill="#dcb47c"/></svg><div><small>RECOMMENDATION</small><b>Trust drives adoption</b><p>Perceived trust is the strongest driver for SMEs to use Islamic crowdfunding (Ashari et al., 2026).</p></div></a>
+ </div>
+</div></section>
+
+<!-- TEAM -->
+<section id="team"><div class="wrap rv">
+  <div class="shead"><div class="badge">👥</div><h2>Team and Contributions</h2></div>
+  <p class="sub">Group e-portfolio. Fill in names and matric numbers.</p>
+  <div class="tablewrap"><table class="team table-min">
+    <tr><th>#</th><th>Name</th><th>Matric no.</th><th>Section</th></tr>
+    <tr><td>1</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Section i: Introduction</td></tr>
+    <tr><td>2</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Section ii (a): Contribution, method, findings, limitations</td></tr>
+    <tr><td>3</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Section ii (b): Implications and literature comparison</td></tr>
+    <tr><td>4</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Task A: Structure diagram</td></tr>
+    <tr><td>5</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Task B: Data interpretation</td></tr>
+    <tr><td>6</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Task C: Institutional map</td></tr>
+    <tr><td>7</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Section iv: Issues, challenges and future directions</td></tr>
+    <tr><td>8</td><td><span class="todo">TODO</span></td><td><span class="todo">TODO</span></td><td>Section v, references and final check</td></tr>
+  </table></div>
+</div></section>
+
+<!-- SECTION 1 -->
+<section id="s1"><div class="wrap">
+  <div class="shead rv"><div class="badge">i</div><h2>Introduction</h2></div>
+  <p class="sub rv">Member 1</p>
+
+  <div class="kpis rv">
+    <div class="kpi"><b data-count="2747.79" data-dec="2" data-pre="RM" data-suf="bn">0</b><span>Total ICM size, end-2025 (SC, 2026)</span></div>
+    <div class="kpi"><b data-count="63.7" data-dec="2" data-suf="%">0</b><span>ICM share of Malaysia's capital market</span></div>
+    <div class="kpi"><b data-count="274.01" data-dec="2" data-pre="RM" data-suf="bn">0</b><span>Islamic AUM, +11.35% year-on-year</span></div>
+    <div class="kpi"><b data-count="128" data-dec="0">0</b><span>Registered Shariah advisers (101 in 2024)</span></div>
+  </div>
+
+  <div class="card rv">
+    <h4>Article reviewed</h4>
+    <div class="tablewrap" style="margin:0"><table>
+      <tr><th style="width:170px">Title</th><td>Navigating Islamic Equity Crowdfunding: A Case Study of Ata Plus in Malaysia</td></tr>
+      <tr><th>Authors</th><td>Habibah Solehah Ramli, Md. Faruk Abdullah, Md. Kausar Alam</td></tr>
+      <tr><th>Year</th><td>2025 (received 17 March 2025; accepted 23 April 2025; online 1 August 2025)</td></tr>
+      <tr><th>Journal</th><td>Asia-Pacific Management Accounting Journal, Vol. 20, Issue 2</td></tr>
+      <tr><th>Indexing</th><td><span class="todo">TODO check Scopus / Web of Science on Scimago or Clarivate. Do not write Q1/Q2 unless confirmed.</span></td></tr>
+      <tr><th>Method</th><td>Qualitative single-case study (document analysis and interviews)</td></tr>
+    </table></div>
+  </div>
+
+  <h3 class="rv">Objective of this review</h3>
+  <p class="rv">This e-portfolio critically reviews the article and links it to real-world Islamic Capital Market (ICM) practice. We illustrate how Ata Plus structures its Shariah-based equity crowdfunding, compare the article's regulatory details with current Securities Commission Malaysia (SC) data, map the institutions involved, and propose practical recommendations.</p>
+
+  <h3 class="rv">Why the article matters to the ICM today</h3>
+  <p class="rv">The ICM is large and still growing: it reached RM2,747.79 billion at end-2025, or 63.70% of the Malaysian capital market (Securities Commission Malaysia [SC], 2026, p. 249). Yet small and medium enterprises (SMEs) still struggle to raise early-stage finance from banks. Equity crowdfunding (ECF) is regulated by the SC as a capital market channel for start-ups and SMEs (SC, 2024, Q1-Q2). The article shows how a Shariah-based ECF platform actually works in Malaysia.</p>
+
+  <h3 class="rv">Problem statement</h3>
+  <div class="card rv">
+    <p>Crowdfunding is well researched, but little is known about how Islamic equity crowdfunding operates in practice. The authors point to limited literature on Shariah-compliant crowdfunding in Malaysia, and ask: <i>what is the operational process at Ata Plus?</i> (Ramli et al., 2025, pp. 33-34).</p>
+    <p><b>Why it matters:</b></p>
+    <ul class="clean">
+      <li><b>Issuers (SMEs):</b> need to know how funding is raised and what Shariah and regulatory requirements apply.</li>
+      <li><b>Investors:</b> need confidence that the platform is Shariah-compliant and their funds are safe.</li>
+      <li><b>Regulators:</b> need evidence of gaps, for example Shariah governance, to improve guidelines.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- SECTION 2 -->
+<section id="s2"><div class="wrap">
+  <div class="shead rv"><div class="badge">ii</div><h2>Main Points and Arguments of the Article</h2></div>
+  <p class="sub rv">Members 2 and 3</p>
+
+  <h3 class="rv">Contribution to the field (Member 2)</h3>
+  <div class="card rv"><ul class="clean">
+    <li><b>New insight:</b> shows how a mudharabah-based, equity ECF platform runs in practice. Earlier work on Islamic ECF was mostly theoretical.</li>
+    <li><b>Governance finding:</b> Ata Plus has no Shariah advisor or supervisory board, so it is better described as <i>Shariah-friendly</i> than fully Shariah-compliant (Ramli et al., 2025, pp. 49, 51).</li>
+    <li><b>Advances knowledge:</b> documents the full user journey (listing, funding, closing), fees and investor rules in one place.</li>
+  </ul></div>
+
+  <h3 class="rv">Methodology and findings (Member 2)</h3>
+  <div class="grid2">
+    <div class="card rv"><h4>What the authors did</h4><ul class="clean">
+      <li>Qualitative, single case study of Ata Plus</li>
+      <li>Document analysis (disclosure statement, application form, terms and conditions, SC guidelines)</li>
+      <li>Semi-structured interviews with two Ata Plus executives (60-120 minutes) in Kuala Lumpur</li>
+      <li>Thematic analysis (Braun &amp; Clarke's six phases), four themes: background, operation, regulation and governance, application guidelines (pp. 40-41)</li></ul></div>
+    <div class="card rv"><h4>Key findings</h4><ul class="clean">
+      <li>Founded March 2016; contributions from as low as RM10 (pp. 38, 41)</li>
+      <li>Uses mudharabah, with the platform as agent under wakalah (pp. 43-44)</li>
+      <li>Fees: MYR 3,000 application screening and 7.5% success fee (p. 44)</li>
+      <li>Regulated by the SC as a recognised market operator (p. 45)</li>
+      <li>No Shariah advisor; follows the SC's two-tier Shariah screening, including the 33% debt ratio benchmark (p. 49)</li></ul></div>
+  </div>
+  <div class="card rv"><h4>Our evaluation</h4>
+    <p><b>Appropriate:</b> a case study suits an under-researched topic where "how it works" is the question. Interviewing platform executives gives first-hand operational detail.</p>
+    <p><b>Weaker points:</b> only two interviewees, both from the platform, so no investor or issuer voices; no quantitative data on campaigns, success rates or returns; much of the operational detail refers to 2016-2018.</p>
+    <p><b>Limitations (authors and ours):</b> a single platform; time constraints and non-response to interview invitations (p. 52); descriptive only, so findings cannot be generalised. The authors suggest comparing other platforms or countries and adding quantitative methods.</p></div>
+
+  <h3 class="rv">Policy and practical implications (Member 3)</h3>
+  <div class="card rv"><ul class="clean">
+    <li><b>For the SC:</b> issue specific guidelines for Shariah-compliant crowdfunding platforms (p. 51).</li>
+    <li><b>For Ata Plus:</b> establish a Shariah supervisory committee to protect investor confidence and reduce reputational risk (p. 51); consider Shariah-compliant debt-based products as well (p. 51).</li>
+    <li><b>Real-world use:</b> issuers and investors get a clear picture of the process, eligibility limits and costs before joining.</li></ul></div>
+
+  <h3 class="rv">Literature comparison (Member 3)</h3>
+  <div class="tablewrap rv"><table class="table-min">
+    <tr><th>Study</th><th>Focus and method</th><th>Compared with Ata Plus article</th><th>Confirm / challenge / extend</th></tr>
+    <tr><td>Ramli et al. (2023), Nusa Kapital</td><td>Qualitative case study, murabahah (debt-based) P2P platform; document analysis and two interviews</td><td>Same authors and method. Nusa Kapital is advised by ISRA Consultancy, while Ata Plus has no Shariah advisor.</td><td><b>Extends:</b> adds an equity-based (mudharabah) model and shows a Shariah governance gap that Nusa Kapital does not have.</td></tr>
+    <tr><td>Kamaruddin et al. (2023), six donation-based platforms</td><td>Exploratory case study, interviews with six platforms (Aug 2022)</td><td>Finds no specific criteria for recognising Islamic crowdfunding in Malaysia, and one platform with no monitoring function.</td><td><b>Confirms</b> the Shariah governance weakness and the need for SC/BNM guidelines.</td></tr>
+    <tr><td>Engku Hassan Ashari et al. (2026), 486 SMEs</td><td>Quantitative survey, extended UTAUT, PLS-SEM</td><td>Finds perceived trust is the strongest driver of intention to use Islamic crowdfunding (β = 0.344).</td><td><b>Extends:</b> gives numbers showing why platform trust, and so Shariah assurance, matters.</td></tr>
+  </table></div>
+</div></section>
+
+<!-- TASK A -->
+<section id="taskA"><div class="wrap">
+  <div class="shead rv"><div class="badge">A</div><h2>Task A: Structure of the Investment</h2></div>
+  <p class="sub rv">Member 4 &nbsp;|&nbsp; Ata Plus equity crowdfunding using Mudharabah (مضاربة) and Wakalah (وكالة). Click a step, or press Play, to see it light up on the diagram.</p>
+
+  <div class="diagram rv">
+  <svg viewBox="0 0 900 540" role="img" aria-label="Flow diagram of Ata Plus equity crowdfunding using mudharabah and wakalah" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,Segoe UI,sans-serif">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F3A6E"/></marker>
+      <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E7C86"/></marker>
+    </defs>
+    <rect x="20" y="20" width="230" height="70" rx="10" fill="#EEF2FA" stroke="#1F3A6E"/>
+    <text x="135" y="48" text-anchor="middle" font-size="14" font-weight="700" fill="#1F3A6E">SECURITIES COMMISSION</text>
+    <text x="135" y="68" text-anchor="middle" font-size="12" fill="#1c2330">registers and regulates (RMO)</text>
+    <rect x="330" y="20" width="240" height="80" rx="12" fill="#1F3A6E"/>
+    <text x="450" y="50" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">ATA PLUS</text>
+    <text x="450" y="70" text-anchor="middle" font-size="12" fill="#d6def0">ECF platform / agent (Wakeel)</text>
+    <text x="450" y="87" text-anchor="middle" font-size="12" fill="#d6def0">Wakalah contract</text>
+    <line x1="250" y1="55" x2="328" y2="55" stroke="#1F3A6E" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+    <rect x="20" y="230" width="230" height="90" rx="12" fill="#E6F4F1" stroke="#0E7C86" stroke-width="1.5"/>
+    <text x="135" y="260" text-anchor="middle" font-size="15" font-weight="700" fill="#0b5a62">ENTREPRENEUR / SME</text>
+    <text x="135" y="280" text-anchor="middle" font-size="12" fill="#1c2330">Issuer = Mudharib</text>
+    <text x="135" y="298" text-anchor="middle" font-size="12" fill="#1c2330">(manager of the business)</text>
+    <rect x="650" y="230" width="230" height="90" rx="12" fill="#FFF4DE" stroke="#C98A12" stroke-width="1.5"/>
+    <text x="765" y="260" text-anchor="middle" font-size="15" font-weight="700" fill="#7a5200">INVESTORS (CROWD)</text>
+    <text x="765" y="280" text-anchor="middle" font-size="12" fill="#1c2330">Capital provider = Rabbul mal</text>
+    <text x="765" y="298" text-anchor="middle" font-size="12" fill="#1c2330">retail / angel / sophisticated</text>
+    <rect x="330" y="240" width="240" height="70" rx="12" fill="#EFE9FB" stroke="#6B46C1" stroke-width="1.5"/>
+    <text x="450" y="268" text-anchor="middle" font-size="15" font-weight="700" fill="#44278f">TRUST ACCOUNT</text>
+    <text x="450" y="288" text-anchor="middle" font-size="12" fill="#1c2330">held at a licensed institution</text>
+    <line x1="450" y1="100" x2="450" y2="238" stroke="#1F3A6E" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+    <text x="458" y="170" font-size="12" fill="#1F3A6E">operates and monitors</text>
+    <rect x="20" y="430" width="230" height="80" rx="12" fill="#F4F6FA" stroke="#5b6577"/>
+    <text x="135" y="462" text-anchor="middle" font-size="15" font-weight="700" fill="#1c2330">BUSINESS PROJECT</text>
+    <text x="135" y="482" text-anchor="middle" font-size="12" fill="#1c2330">operations, sales, profit</text>
+
+    <path class="arr" data-step="1" d="M135,230 L135,150 L328,80" fill="none" stroke="#1F3A6E" stroke-width="2" marker-end="url(#ar)"/>
+    <g class="node" data-step="1"><circle cx="135" cy="150" r="13" fill="#1F3A6E"/><text x="135" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1</text></g>
+    <path class="arr" data-step="2" d="M570,80 L765,150 L765,228" fill="none" stroke="#1F3A6E" stroke-width="2" marker-end="url(#ar)"/>
+    <g class="node" data-step="2"><circle cx="765" cy="150" r="13" fill="#1F3A6E"/><text x="765" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2</text></g>
+    <line class="arr" data-step="3" x1="650" y1="262" x2="572" y2="262" stroke="#1F3A6E" stroke-width="2" marker-end="url(#ar)"/>
+    <g class="node" data-step="3"><circle cx="611" cy="248" r="13" fill="#1F3A6E"/><text x="611" y="253" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3</text></g>
+    <line class="arr" data-step="4" x1="330" y1="262" x2="252" y2="262" stroke="#1F3A6E" stroke-width="2" marker-end="url(#ar)"/>
+    <g class="node" data-step="4"><circle cx="291" cy="248" r="13" fill="#1F3A6E"/><text x="291" y="253" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">4</text></g>
+    <line class="arr" data-step="5" x1="100" y1="320" x2="100" y2="428" stroke="#1F3A6E" stroke-width="2" marker-end="url(#ar)"/>
+    <g class="node" data-step="5"><circle cx="100" cy="375" r="13" fill="#1F3A6E"/><text x="100" y="380" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">5</text></g>
+    <path class="arr" data-step="6" d="M250,470 L450,470 L450,312" fill="none" stroke="#0E7C86" stroke-width="2" marker-end="url(#ag)"/>
+    <g class="node" data-step="6"><circle cx="350" cy="470" r="13" fill="#0E7C86"/><text x="350" y="475" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">6</text></g>
+    <line class="arr" data-step="7" x1="572" y1="292" x2="648" y2="292" stroke="#0E7C86" stroke-width="2" marker-end="url(#ag)"/>
+    <g class="node" data-step="7"><circle cx="611" cy="310" r="13" fill="#0E7C86"/><text x="611" y="315" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">7</text></g>
+
+    <line x1="560" y1="440" x2="600" y2="440" stroke="#1F3A6E" stroke-width="2" marker-end="url(#ar)"/><text x="610" y="444" font-size="12" fill="#1c2330">funding stage</text>
+    <line x1="560" y1="465" x2="600" y2="465" stroke="#0E7C86" stroke-width="2" marker-end="url(#ag)"/><text x="610" y="469" font-size="12" fill="#1c2330">return stage</text>
+    <line x1="560" y1="490" x2="600" y2="490" stroke="#1F3A6E" stroke-dasharray="5 4"/><text x="610" y="494" font-size="12" fill="#1c2330">regulation / supervision</text>
+  </svg>
+  </div>
+  <p class="fig rv">Figure 1. Own diagram, based on Ramli et al. (2025, pp. 42-45, 50) and SC (2024, Q7, Q13, Q18). The step order follows the article's text; the trust-account flows (steps 3, 4, 6, 7) follow the SC's trust-account requirement.</p>
+
+  <div class="ctrl rv"><button class="btn" id="play">▶ Play</button><button class="btn alt" id="prev">‹ Prev</button><button class="btn alt" id="next">Next ›</button></div>
+  <ol class="steps" id="stepList">
+    <li data-step="1"><b>Apply and screening.</b> The entrepreneur (mudharib) registers on Ata Plus and pitches the business. The platform screens the issuer with background checks and the SC's two-tier Shariah screening (business activity, then a 33% debt ratio benchmark). Screening costs about MYR 3,000 on the full service (pp. 44, 49).</li>
+    <li data-step="2"><b>Campaign is listed.</b> Ata Plus acts only as an agent (wakalah) and finds the crowd. The issuer normally has 90 days to reach the funding target (pp. 42, 44).</li>
+    <li data-step="3"><b>Investors invest.</b> Investors (rabbul mal) put in money through the platform under the Wakalah agreement and the Master Mudharabah Crowdfunding Agreement (MMCA), which sets the profit and loss sharing ratio. They get a six-day cooling-off period (p. 44). The minimum is as low as RM10 (p. 41). Funds sit in a trust account (p. 45).</li>
+    <li data-step="4"><b>Funds released.</b> If the target is met, funds go to the issuer. If the minimum is not met in time, the money is refunded (p. 44; SC, 2024, Q13).</li>
+    <li data-step="5"><b>Business runs.</b> The mudharib uses the capital for the project and updates investors on progress online (p. 43). Ata Plus handles the legal documents and share transfer on closing, within about 14 working days (p. 50).</li>
+    <li data-step="6"><b>Profit generated and repaid.</b> Profit is shared based on the agreed ratio, and returns flow back via the trust account. The platform earns a 7.5% success fee on a successful campaign (p. 44).</li>
+    <li data-step="7"><b>Return to investors.</b> Investors receive their principal plus their share of profit. In mudharabah, losses are borne by the investor unless caused by the mudharib's misconduct, negligence or breach of terms (p. 45).</li>
+  </ol>
+  <div class="note rv"><b>Observation.</b> The article calls the arrangement mudharabah, but also describes shares being issued to investors on closing (pp. 42, 50). This mixes a profit-sharing contract with share ownership. We show the structure as described, and note it as a point to clarify with the lecturer.</div>
+
+  <div class="tool rv" id="calc">
+    <h4>🧮 Try it: Mudharabah profit and loss calculator</h4>
+    <p style="margin:0;font-size:14px;color:var(--mute)">Illustrative only. The fee is assumed to be 7.5% of funds raised, charged to the issuer; the article does not state the base.</p>
+    <div class="tgrid">
+      <div><label>Funds raised from the crowd (RM)</label><input type="number" id="cap" value="100000" min="0" step="1000"></div>
+      <div><label>Business result: profit (+) or loss (−) (RM)</label><input type="number" id="prof" value="20000" step="1000"></div>
+      <div><label>Investor profit share: <b id="psrV">70</b>%</label><input type="range" id="psr" min="10" max="90" step="5" value="70"></div>
+    </div>
+    <label style="display:flex;gap:8px;align-items:center;font-weight:500"><input type="checkbox" id="neg" style="width:auto"> Loss caused by mudharib's negligence or breach of terms</label>
+    <div class="split" aria-hidden="true"><i id="sInv" style="background:var(--teal)"></i><i id="sMud" style="background:var(--gold)"></i></div>
+    <div class="res" id="calcOut"></div>
+    <div class="verdict ok" id="calcMsg"></div>
+  </div>
+</div></section>
+
+<!-- TASK B -->
+<section id="taskB"><div class="wrap">
+  <div class="shead rv"><div class="badge">B</div><h2>Task B: Data Interpretation</h2></div>
+  <p class="sub rv">Member 5 &nbsp;|&nbsp; The article has no statistical tables, so we use its investor and issuer limits (pp. 46-48) as the data to interpret, and compare them with the SC's current FAQ and Annual Report 2025.</p>
+
+  <h3 class="rv">1. What the article's data shows</h3>
+  <p class="rv">The article lists who may invest and how much. Retail investors are capped at RM5,000 per issuer and RM50,000 in 12 months, angel investors at RM500,000 in 12 months, and sophisticated investors have no cap. Issuers may raise up to RM3 million in 12 months (Ramli et al., 2025, pp. 46-48). In plain terms: the limits protect small investors from concentrating losses in one risky start-up, while wealthier investors can take larger positions. For issuers, the cap limits how fast they can scale through the platform.</p>
+
+  <h3 class="rv">2. Comparison with current SC data</h3>
+  <div class="tablewrap rv"><table class="table-min">
+    <tr><th>Item</th><th>Article (Ata Plus, 2025)</th><th>SC FAQ (revised 6 Feb 2024)</th><th>Result</th></tr>
+    <tr><td>Retail investor limit</td><td>RM5,000 per issuer; max RM50,000 / 12 months (p. 47)</td><td>RM5,000 single investment; max RM50,000 / 12 months (Q17)</td><td><span class="pill same">Same</span></td></tr>
+    <tr><td>Angel investor</td><td>MBAN-certified; max RM500,000 / 12 months (p. 46)</td><td>Malaysian tax resident meeting net asset or income tests; up to RM500,000 / 12 months (Q3, Q17)</td><td><span class="pill same">Same limit</span> <span class="pill diff">Definition differs</span></td></tr>
+    <tr><td>Sophisticated investor</td><td>Net worth above RM3m (individual) or RM10m (entity); no limit (p. 46)</td><td>As set in SC sophisticated investor guidelines, or RM250,000 per transaction; no limit (Q3, Q17)</td><td><span class="pill same">Same limit</span> <span class="pill diff">Definition differs</span></td></tr>
+    <tr><td>Issuer fundraising cap</td><td>RM3m in 12 months; RM5m via ECF (p. 48)</td><td><b>RM20m over the issuer's lifetime</b> (Q12)</td><td><span class="pill diff">Differs</span></td></tr>
+    <tr><td>Cooling-off period</td><td>6 days (p. 44); at least 6 business days (p. 46)</td><td>6 business days (Q18)</td><td><span class="pill same">Same</span></td></tr>
+    <tr><td>One platform at a time</td><td>Issuer cannot raise on several ECF platforms (p. 48)</td><td>Only one ECF platform at a time (Q15)</td><td><span class="pill same">Same</span></td></tr>
+    <tr><td>Secondary market</td><td>Not discussed</td><td>Allowed with SC approval (Q9)</td><td><span class="pill new">New</span></td></tr>
+  </table></div>
+  <p class="fig rv">Sources: Ramli et al. (2025); Securities Commission Malaysia (2024).</p>
+
+  <div class="note rv"><b>Insight.</b> Investor protection rules (retail and angel limits, cooling-off, one platform at a time) are stable. The big change is the issuer cap, now RM20 million over the issuer's lifetime against RM3 million in 12 months in the article. This suggests the ECF framework has matured and become more generous to issuers since the data the article describes, and that the article's operating details are partly dated. A secondary market is also now possible, which addresses a liquidity concern the article does not discuss. <span class="todo">TODO check the SC website in case the FAQ was updated after Feb 2024.</span></div>
+
+  <div class="tool rv" id="lim">
+    <h4>✅ Try it: Can this investor invest? (SC FAQ Q17)</h4>
+    <div class="tgrid">
+      <div><label>Investor type</label><select id="ityp"><option value="retail">Retail investor</option><option value="angel">Angel investor</option><option value="soph">Sophisticated investor</option></select></div>
+      <div><label>This investment (RM)</label><input type="number" id="iamt" value="3000" min="0" step="500"></div>
+      <div><label>Already invested in ECF in the last 12 months (RM)</label><input type="number" id="iprev" value="40000" min="0" step="1000"></div>
+    </div>
+    <div class="verdict ok" id="limMsg"></div>
+  </div>
+
+  <h3 class="rv">3. Current ICM market data (SC Annual Report 2025)</h3>
+  <div class="tablewrap rv"><table class="table-min">
+    <tr><th>Indicator</th><th>2024</th><th>2025</th><th>Growth</th></tr>
+    <tr><td>Islamic AUM (RM billion)</td><td>246.09</td><td>274.01</td><td>+11.35%</td></tr>
+    <tr><td>Registered Shariah advisers</td><td>101</td><td>128</td><td>+26.7%*</td></tr>
+    <tr><td>Shariah-compliant securities (number)</td><td>822</td><td>867</td><td>+5.5%*</td></tr>
+    <tr><td>Total ICM (RM billion)</td><td>2,634.13</td><td>2,747.79</td><td>+4.31%</td></tr>
+  </table></div>
+  <p class="fig rv">Source: SC (2026), Annual Report 2025, Part 6, pp. 249-255 (Tables 1, 2, 5, 11). *Own calculation from the SC figures.</p>
+
+  <h4 class="rv">Chart: growth 2024 to 2025 (%)</h4>
+  <div class="card bars rv" role="img" aria-label="Bar chart of growth rates 2024 to 2025">
+    <div class="row"><span class="lab">Registered Shariah advisers</span><div class="track"><div class="fill alt" data-w="89"></div></div><b>26.7%</b></div>
+    <div class="row"><span class="lab">Islamic AUM</span><div class="track"><div class="fill" data-w="37.8"></div></div><b>11.35%</b></div>
+    <div class="row"><span class="lab">Shariah-compliant securities</span><div class="track"><div class="fill" data-w="18.3"></div></div><b>5.5%</b></div>
+    <div class="row"><span class="lab">Total ICM size</span><div class="track"><div class="fill" data-w="14.4"></div></div><b>4.31%</b></div>
+  </div>
+  <p class="fig rv">Own chart based on SC (2026). Bar length is proportional to growth rate (scale 0-30%).</p>
+
+  <div class="note rv"><b>Does current data support the article?</b> Partly. The article says Ata Plus has no Shariah advisor. Nationally, the number of registered Shariah advisers grew fastest of the four indicators (+26.7%), so the talent pool is expanding and the gap is more fixable now. The fast growth of Islamic AUM (+11.35%) shows rising demand for Shariah-compliant investments, supporting the article's point that platforms need credible Shariah assurance. The SC report does not give ECF-specific figures. <span class="todo">TODO add latest ECF statistics (amount raised, number of campaigns) from the SC website and cite them.</span></div>
+</div></section>
+
+<!-- TASK C -->
+<section id="taskC"><div class="wrap">
+  <div class="shead rv"><div class="badge">C</div><h2>Task C: Institutional Map</h2></div>
+  <p class="sub rv">Member 6 &nbsp;|&nbsp; Institutions around Ata Plus in four groups. Click any institution to see its role.</p>
+
+  <div class="diagram rv">
+  <svg viewBox="0 0 900 530" role="img" aria-label="Institutional map around Ata Plus" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,Segoe UI,sans-serif">
+    <g stroke="#9aa4b8" stroke-width="2" stroke-dasharray="5 4"><line x1="390" y1="215" x2="300" y2="210"/><line x1="510" y1="215" x2="600" y2="210"/><line x1="390" y1="305" x2="300" y2="310"/><line x1="510" y1="305" x2="600" y2="310"/></g>
+    <rect x="20" y="15" width="400" height="195" rx="14" fill="#EAF2FB" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="40" y="42" font-size="15" font-weight="700" fill="#2B6CB0">1  REGULATORS AND SUPERVISORS</text>
+    <g class="chip" data-k="sc" tabindex="0"><rect x="40" y="58" width="360" height="40" rx="8" fill="#fff" stroke="#2B6CB0"/><text x="55" y="83" font-size="13" fill="#1c2330">Securities Commission Malaysia (SC)</text></g>
+    <g class="chip" data-k="ssm" tabindex="0"><rect x="40" y="106" width="360" height="40" rx="8" fill="#fff" stroke="#2B6CB0"/><text x="55" y="131" font-size="13" fill="#1c2330">Suruhanjaya Syarikat Malaysia (SSM)</text></g>
+    <g class="chip" data-k="bnm" tabindex="0"><rect x="40" y="154" width="360" height="40" rx="8" fill="#fff" stroke="#2B6CB0"/><text x="55" y="179" font-size="13" fill="#1c2330">Bank Negara Malaysia (indirect role)</text></g>
+    <rect x="480" y="15" width="400" height="195" rx="14" fill="#E9F6EE" stroke="#2F855A" stroke-width="1.5"/>
+    <text x="500" y="42" font-size="15" font-weight="700" fill="#2F855A">2  SHARIAH BODIES</text>
+    <g class="chip" data-k="sac" tabindex="0"><rect x="500" y="58" width="360" height="40" rx="8" fill="#fff" stroke="#2F855A"/><text x="515" y="83" font-size="13" fill="#1c2330">SC Shariah Advisory Council</text></g>
+    <g class="chip" data-k="adv" tabindex="0"><rect x="500" y="106" width="360" height="40" rx="8" fill="#fff" stroke="#2F855A"/><text x="515" y="131" font-size="13" fill="#1c2330">SC-registered Shariah advisers (128 in 2025)</text></g>
+    <g class="chip" data-k="adv" tabindex="0"><rect x="500" y="154" width="360" height="40" rx="8" fill="#FFF1F0" stroke="#C53030" stroke-dasharray="4 3"/><text x="515" y="179" font-size="13" fill="#9b2c2c">Ata Plus Shariah committee (absent, p. 49)</text></g>
+    <rect x="20" y="320" width="400" height="195" rx="14" fill="#FDF3E2" stroke="#B7791F" stroke-width="1.5"/>
+    <text x="40" y="347" font-size="15" font-weight="700" fill="#9a6411">3  INTERNATIONAL STANDARD SETTERS</text>
+    <g class="chip" data-k="aaoifi" tabindex="0"><rect x="40" y="363" width="360" height="40" rx="8" fill="#fff" stroke="#B7791F"/><text x="55" y="388" font-size="13" fill="#1c2330">AAOIFI (Shariah and accounting standards)</text></g>
+    <g class="chip" data-k="ifsb" tabindex="0"><rect x="40" y="411" width="360" height="40" rx="8" fill="#fff" stroke="#B7791F"/><text x="55" y="436" font-size="13" fill="#1c2330">IFSB (prudential and governance standards)</text></g>
+    <g class="chip" data-k="iifm" tabindex="0"><rect x="40" y="459" width="360" height="40" rx="8" fill="#fff" stroke="#B7791F"/><text x="55" y="484" font-size="13" fill="#1c2330">IIFM (standardised contracts and documents)</text></g>
+    <rect x="480" y="320" width="400" height="195" rx="14" fill="#F1ECFB" stroke="#6B46C1" stroke-width="1.5"/>
+    <text x="500" y="347" font-size="15" font-weight="700" fill="#6B46C1">4  MARKET INFRASTRUCTURE AND INTERMEDIARIES</text>
+    <g class="chip" data-k="trustee" tabindex="0"><rect x="500" y="363" width="360" height="40" rx="8" fill="#fff" stroke="#6B46C1"/><text x="515" y="388" font-size="13" fill="#1c2330">Trustee / licensed institution (trust account)</text></g>
+    <g class="chip" data-k="mban" tabindex="0"><rect x="500" y="411" width="360" height="40" rx="8" fill="#fff" stroke="#6B46C1"/><text x="515" y="436" font-size="13" fill="#1c2330">Malaysian Business Angel Network (MBAN)</text></g>
+    <g class="chip" data-k="bursa" tabindex="0"><rect x="500" y="459" width="360" height="40" rx="8" fill="#fff" stroke="#6B46C1"/><text x="515" y="484" font-size="13" fill="#1c2330">Bursa Malaysia (possible later listing route)</text></g>
+    <circle cx="450" cy="260" r="62" fill="#1F3A6E"/>
+    <text x="450" y="255" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">ATA PLUS</text>
+    <text x="450" y="274" text-anchor="middle" font-size="12" fill="#d6def0">ECF operator</text>
+  </svg>
+  </div>
+  <p class="fig rv">Figure 2. Own diagram. Dashed red box = a gap identified in the article.</p>
+  <div id="mapPanel" class="rv"><b>Click an institution above</b> to read how it affects Ata Plus.</div>
+
+  <h3 class="rv">How each institution affects Ata Plus</h3>
+  <div class="tablewrap rv"><table class="table-min">
+    <tr><th>Group</th><th>Institution</th><th>Role and effect on the article's topic</th></tr>
+    <tr id="r-sc"><td>1 Regulator</td><td>Securities Commission Malaysia (SC)</td><td>Registers ECF operators as recognised market operators under the Guidelines on Recognized Markets; sets investor limits, issuer rules, disclosure and anti-money-laundering duties (Ramli et al., 2025, pp. 45-48; SC, 2024, Q1, Q7).</td></tr>
+    <tr id="r-ssm"><td>1 Regulator</td><td>Suruhanjaya Syarikat Malaysia (SSM)</td><td>Registers companies, so issuers must be locally incorporated entities to use the platform (SC, 2024, Q4; Ramli et al., 2025, p. 47).</td></tr>
+    <tr id="r-bnm"><td>1 Regulator</td><td>Bank Negara Malaysia (BNM)</td><td>Not the direct ECF regulator. Relevant to the wider Islamic finance system and cited in the article as an early interested institution (p. 41). <span class="todo">TODO confirm BNM's role with a source or remove.</span></td></tr>
+    <tr id="r-sac"><td>2 Shariah</td><td>SC Shariah Advisory Council</td><td>Shariah authority for the Malaysian capital market. ECF operators offering Shariah-compliant equity must follow the Guidelines on Islamic Capital Market Products and Services (SC, 2024, Q8).</td></tr>
+    <tr id="r-adv"><td>2 Shariah</td><td>Registered Shariah advisers</td><td>Advise firms on Shariah matters; 128 are registered (SC, 2026, p. 255). Ata Plus has none, so it is "Shariah-friendly" only (Ramli et al., 2025, pp. 48-49).</td></tr>
+    <tr id="r-aaoifi"><td>3 Standards</td><td>AAOIFI</td><td>Issues Shariah and accounting standards for Islamic financial institutions; relevant to contracts (mudharabah, wakalah) and Shariah governance. Not mentioned in the article. <span class="todo">TODO cite AAOIFI website.</span></td></tr>
+    <tr id="r-ifsb"><td>3 Standards</td><td>IFSB</td><td>Issues prudential and governance standards for Islamic finance, relevant to the call for stronger Shariah governance. Not mentioned in the article. <span class="todo">TODO cite IFSB website.</span></td></tr>
+    <tr id="r-iifm"><td>3 Standards</td><td>IIFM</td><td>Develops standard contracts and documentation, relevant to standardising agreements such as the MMCA. Not mentioned in the article. <span class="todo">TODO cite IIFM website.</span></td></tr>
+    <tr id="r-trustee"><td>4 Market</td><td>Trustee / licensed institution</td><td>Holds investors' money in a trust account until the target is met and funds are disbursed (Ramli et al., 2025, p. 45; SC, 2024, Q7).</td></tr>
+    <tr id="r-mban"><td>4 Market</td><td>MBAN</td><td>Certifies angel investors in the article's description (p. 46).</td></tr>
+    <tr id="r-bursa"><td>4 Market</td><td>Bursa Malaysia</td><td>A company funded through ECF may later become eligible to list on the stock exchange, giving investors a potential exit (SC, 2024, Q2). The ACE and LEAP markets hold 228 of the 867 Shariah-compliant securities (SC, 2026, p. 250).</td></tr>
+  </table></div>
+  <div class="note rv">Rating agencies such as RAM and MARC are mainly relevant to sukuk and are not involved in ECF campaigns, so they are left out of this map.</div>
+</div></section>
+
+<!-- TIMELINE -->
+<section id="time"><div class="wrap">
+  <div class="shead rv"><div class="badge">⏳</div><h2>Timeline of Equity Crowdfunding in Malaysia</h2></div>
+  <p class="sub rv">Extra context. Every date comes from the sources used in this portfolio.</p>
+  <div class="timeline">
+    <div class="tl rv"><b>10 Feb 2015</b><br>SC accepts the first crowdfunding framework, the first in ASEAN. <small>(Ramli et al., 2025, p. 38)</small></div>
+    <div class="tl rv"><b>15 Dec 2015</b><br>SC issues the Guidelines on Recognized Markets. <small>(Ramli et al., 2025, p. 38)</small></div>
+    <div class="tl rv"><b>Mar 2016</b><br>Ata Plus is established as an equity crowdfunding platform. <small>(p. 38)</small></div>
+    <div class="tl rv"><b>2 May 2016</b><br>Guidelines supporting peer-to-peer financing take effect. <small>(Ramli et al., 2023, p. 149)</small></div>
+    <div class="tl rv"><b>2017</b><br>Nusa Kapital established: the first regulated Shariah-compliant P2P crowdfunding platform. <small>(Ramli et al., 2023, p. 149)</small></div>
+    <div class="tl rv"><b>2019</b><br>SC introduces the Malaysia Co-Investment Fund (MyCIF), combining ECF and lending-based crowdfunding. <small>(Kamaruddin et al., 2023, p. 3)</small></div>
+    <div class="tl rv"><b>31 Oct 2022</b><br>SC announces applications open for Shariah-compliant ECF operators. <small>(SC, 2024, Q10)</small></div>
+    <div class="tl rv"><b>6 Feb 2024</b><br>SC revises its ECF FAQ (issuer lifetime cap RM20m; secondary market allowed with approval). <small>(SC, 2024)</small></div>
+    <div class="tl rv"><b>2025</b><br>Ata Plus article published; ICM reaches RM2,747.79 billion. <small>(Ramli et al., 2025; SC, 2026)</small></div>
+  </div>
+</div></section>
+
+<!-- SECTION 4 -->
+<section id="s4"><div class="wrap">
+  <div class="shead rv"><div class="badge">iv</div><h2>Linking the Article to ICM Issues, Challenges and Future Directions</h2></div>
+  <p class="sub rv">Member 7</p>
+
+  <h3 class="rv">(a) The evolving state of the ICM</h3>
+  <p class="rv">ECF sits in the <b>product innovation and market access</b> part of ICM development. The ICM stood at RM2,747.79 billion at end-2025, up 4.31% and equal to 63.70% of the Malaysian capital market, and Islamic AUM grew 11.35% to RM274.01 billion (SC, 2026, pp. 249, 252). Malaysia was the first ASEAN country with a regulatory framework for crowdfunding, approved in February 2015 (Ramli et al., 2025, p. 38). Under the SC's Malaysia Co-Investment Fund (MyCIF), more than RM357 million was invested through over 16,000 campaigns benefiting 2,280 MSMEs, with over RM1.36 billion co-invested from private investors (Kamaruddin et al., 2023, pp. 3-4, citing SC, 2021). <span class="todo">TODO replace or add the latest ECF figures from the SC website.</span></p>
+
+  <h3 class="rv">(b) ICM issues and challenges</h3>
+  <div class="tablewrap rv"><table class="table-min">
+    <tr><th>Issue / challenge</th><th>Evidence from the article</th><th>Real-world example</th><th>Impact on the ICM</th></tr>
+    <tr><td><b>Shariah governance weakness</b></td><td>Ata Plus has no Shariah advisor or supervisory board, so it is "Shariah-friendly" rather than fully Shariah-compliant (Ramli et al., 2025, pp. 48-49, 51).</td><td>Among six Islamic donation-based platforms, one had no monitoring function (Kamaruddin et al., 2023, p. 6). Nusa Kapital, by contrast, is advised by ISRA Consultancy (Ramli et al., 2023, p. 149).</td><td>Risk of Shariah non-compliance and reputational damage; investors may lose confidence (Ramli et al., 2025, p. 51).</td></tr>
+    <tr><td><b>Lack of standardisation and specific guidelines</b></td><td>Authors suggest the SC issue specific guidelines for Shariah-compliant crowdfunding platforms (p. 51). Shariah requirements are not specified in the guidelines (p. 52).</td><td>No specific criteria for recognising Islamic crowdfunding in Malaysia; several platforms simply claim Shariah compliance (Kamaruddin et al., 2023, p. 4). Practices differ: Nusa Kapital uses murabahah, Ata Plus mudharabah.</td><td>Inconsistent Shariah interpretation across platforms makes it harder for investors to compare and for the market to grow.</td></tr>
+    <tr><td><b>Low adoption and trust</b></td><td>Malaysia is at an early stage of crowdfunding with lower acceptance (pp. 33-34).</td><td>A survey of 486 SMEs found perceived trust is the strongest driver of intention to use Islamic crowdfunding (β = 0.344), followed by social influence (Engku Hassan Ashari et al., 2026, p. 40).</td><td>Without trust, SMEs and investors stay with banks, slowing the growth of ECF as a capital market channel.</td></tr>
+  </table></div>
+
+  <h3 class="rv">(c) Future directions: recommendations</h3>
+  <div class="grid2">
+    <details class="issue rv" open><summary>🧭 1. Issue ECF-specific Shariah guidelines</summary><div class="in">
+      <p><b>What:</b> set clear Shariah governance requirements for Islamic ECF platforms (who must advise, what to disclose, how contracts are checked).</p>
+      <p><b>Who:</b> SC with its Shariah Advisory Council (Task C, groups 1 and 2); standards guided by AAOIFI/IIFM.</p>
+      <p><b>Expected outcome:</b> consistent practice across platforms and stronger investor confidence.</p></div></details>
+    <details class="issue rv" open><summary>🕌 2. Appoint a registered Shariah adviser or committee</summary><div class="in">
+      <p><b>What:</b> Ata Plus appoints a Shariah adviser or supervisory committee and publishes its Shariah contracts and reviews.</p>
+      <p><b>Who:</b> Ata Plus, using one of the 128 SC-registered Shariah advisers (Task C, groups 2 and 4).</p>
+      <p><b>Expected outcome:</b> full Shariah-compliant status, lower reputational risk, higher trust.</p></div></details>
+    <details class="issue rv" open><summary>🔍 3. Build trust through disclosure and education</summary><div class="in">
+      <p><b>What:</b> publish campaign results and platform reports, and run education programmes for SMEs and investors.</p>
+      <p><b>Who:</b> Ata Plus and other ECF operators, with SC oversight (Task C, groups 1 and 4).</p>
+      <p><b>Expected outcome:</b> higher adoption, supported by the finding that trust drives intention to use (Engku Hassan Ashari et al., 2026).</p></div></details>
+  </div>
+</div></section>
+
+<!-- SECTION 5 -->
+<section id="s5"><div class="wrap">
+  <div class="shead rv"><div class="badge">v</div><h2>Conclusion and Reflection</h2></div>
+  <p class="sub rv">Member 8, with input from all members</p>
+
+  <h3 class="rv">Summary of key findings</h3>
+  <p class="rv">Ramli et al. (2025) show that Ata Plus runs a Shariah-based equity crowdfunding model using mudharabah and wakalah, regulated by the SC as a recognised market operator, with clear limits for retail, angel and sophisticated investors. The main weakness is Shariah governance: there is no Shariah advisor or supervisory board. Comparing the article with SC data shows the framework has moved on (the issuer cap is now RM20 million over the issuer's lifetime) and that the pool of registered Shariah advisers is growing, so the governance gap can be closed. We recommend ECF-specific guidelines from the SC, a Shariah adviser for Ata Plus, and stronger disclosure to build trust.</p>
+
+  <h3 class="rv">Personal reflection</h3>
+  <div class="card rv">
+    <p><span class="todo">TODO each member writes 2-3 sentences: how did the article change or deepen your understanding of the ICM? Member 8 combines them here.</span></p>
+    <p>Member 1: <span class="todo">TODO</span> &nbsp; Member 2: <span class="todo">TODO</span> &nbsp; Member 3: <span class="todo">TODO</span> &nbsp; Member 4: <span class="todo">TODO</span></p>
+    <p>Member 5: <span class="todo">TODO</span> &nbsp; Member 6: <span class="todo">TODO</span> &nbsp; Member 7: <span class="todo">TODO</span> &nbsp; Member 8: <span class="todo">TODO</span></p>
+  </div>
+  <h3 class="rv">Practical skills developed</h3>
+  <div class="card rv"><p><span class="todo">TODO members write about the skills they developed (reading a structure, interpreting market data, mapping institutions) and how they would use them as future practitioners.</span></p></div>
+</div></section>
+
+<!-- QUIZ -->
+<section id="quiz"><div class="wrap">
+  <div class="shead rv"><div class="badge">?</div><h2>Test Yourself</h2></div>
+  <p class="sub rv">Optional extra, not required by the guideline. Five questions from the article and SC sources.</p>
+  <div class="tool rv" id="quizBox"></div>
+</div></section>
+
+<!-- REFERENCES -->
+<section id="refs"><div class="wrap">
+  <div class="shead rv"><div class="badge">📚</div><h2>References</h2></div>
+  <p class="sub rv">APA 7th edition</p>
+  <div class="card refs rv">
+    <p>Engku Hassan Ashari, E. H. M., Abdul-Rahman, A., &amp; Yaakob, S. E. (2026). Islamic crowdfunding as a financing alternative for Malaysian entrepreneurs and its perceived acceptance. <i>Jurnal Pengurusan, 77</i>, 33-47. https://doi.org/10.17576/pengurusan-2026-77-3</p>
+    <p>Kamaruddin, M. I. H., Muhamed, N. A., Radzi, R. M., Nazarie, W. N. F. W. M., &amp; Kamarubahrin, A. F. (2023). Financial management practices in Islamic donation-based crowdfunding (DCF) platforms in Malaysia. <i>Future Business Journal, 9</i>(1), Article 32. https://doi.org/10.1186/s43093-023-00210-7</p>
+    <p>Ramli, H. S., Abdullah, M. F., &amp; Alam, M. K. (2023). Islamic crowdfunding practices in Malaysia: A case study on Nusa Kapital. <i>Asian Journal of Accounting Research, 8</i>(2), 145-156. https://doi.org/10.1108/AJAR-11-2021-0248</p>
+    <p>Ramli, H. S., Abdullah, M. F., &amp; Alam, M. K. (2025). Navigating Islamic equity crowdfunding: A case study of Ata Plus in Malaysia. <i>Asia-Pacific Management Accounting Journal, 20</i>(2), 31-56. <span class="todo">TODO confirm page range and add DOI/URL</span></p>
+    <p>Securities Commission Malaysia. (2024). <i>Frequently-asked questions: Equity crowdfunding framework</i> (Revised 6 February 2024). <span class="todo">TODO add URL from sc.com.my</span></p>
+    <p>Securities Commission Malaysia. (2026). <i>Annual report 2025</i> (Part 6: Market statistics). <span class="todo">TODO confirm publication year on the cover; add URL</span></p>
+  </div>
+  <h3 class="rv">Declaration on the use of AI</h3>
+  <div class="card rv"><p>In line with the course and university policy, we declare that an AI tool (Claude, by Anthropic) was used to help organise tasks, draft and structure content from the sources listed above, and build this website, including its illustrations and interactive tools. All members have checked the facts, figures and citations against the original sources. <span class="todo">TODO edit to match what your group actually did, and follow your university's policy.</span></p></div>
+  <h3 class="rv">Submission checklist</h3>
+  <div class="card rv"><ul class="clean">
+    <li>Article is peer-reviewed, published 2021-2026, approved by lecturer. <span class="todo">Note: it is a qualitative case study. Lecturer has approved the title.</span></li>
+    <li>Sections i-v complete.</li>
+    <li>Structure diagram (Task A), data table and chart (Task B), institutional map (Task C) and issues table (Section iv) included.</li>
+    <li>Two or more challenges and two or more recommendations discussed.</li>
+    <li>At least 5 APA references, including 1 regulatory report (we have 6).</li>
+    <li>Website link is open to the lecturer (check in a private browser window).</li>
+  </ul></div>
+</div></section>
+
+</main>
+<footer class="f3"><div class="wrap"><div class="cols">
+ <div><div class="brand" style="color:#fff"><svg viewBox="0 0 40 40"><path d="M20 3 L37 36 H3 Z" fill="none" stroke="#B98A4E" stroke-width="2.4"/><path d="M20 12 L30 33 H10 Z" fill="none" stroke="#0f2342" stroke-width="2"/><circle cx="20" cy="26" r="3" fill="#B98A4E"/></svg><span><b style="color:#fff">ATA PLUS</b><small>CASE PORTFOLIO</small></span></div><p style="margin-top:12px">ABM20103 Islamic Capital Market e-portfolio. Prepared by a group of 8 students.</p></div>
+ <div><h5>Portfolio</h5><a href="#s1">Introduction</a><a href="#s2">Critical review</a><a href="#taskA">Task A</a><a href="#taskB">Task B</a><a href="#taskC">Task C</a></div>
+ <div><h5>More</h5><a href="#time">Timeline</a><a href="#s4">Issues and future</a><a href="#s5">Reflection</a><a href="#quiz">Quiz</a><a href="#refs">References</a></div>
+ <div><h5>Details</h5><p style="margin:5px 0">Course: ABM20103</p><p style="margin:5px 0">Weight: 30%</p><p style="margin:5px 0">Due: 21 December 2026</p><p style="margin:5px 0"><span class="todo">TODO lecturer name</span></p></div>
+</div><div class="copy">© 2026 ABM20103 group project. Illustrations are original SVG drawings.</div></div></footer>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* progress bar + nav highlight */
+  var bar=$('#progress'), links=$$('nav a');
+  function onScroll(){
+    var h=document.documentElement, p=h.scrollTop/(h.scrollHeight-h.clientHeight);
+    bar.style.width=(p*100)+'%';
+    var cur='';
+    $$('section').forEach(function(s){ if(s.getBoundingClientRect().top<120) cur=s.id; });
+    links.forEach(function(a){ a.classList.toggle('on',a.getAttribute('href')==='#'+cur); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* reveal, count-up, bars */
+  function countUp(el){
+    var t=parseFloat(el.dataset.count), d=parseInt(el.dataset.dec||0), pre=el.dataset.pre||'', suf=el.dataset.suf||'', st=null;
+    function f(ts){ if(!st) st=ts; var k=Math.min((ts-st)/1200,1), e=1-Math.pow(1-k,3);
+      el.textContent=pre+(t*e).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})+suf; if(k<1) requestAnimationFrame(f); }
+    requestAnimationFrame(f);
+  }
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in');
+      $$('[data-count]',e.target).forEach(countUp);
+      $$('.fill',e.target).forEach(function(f){ f.style.width=f.dataset.w+'%'; });
+      io.unobserve(e.target);} });
+  },{threshold:.12}):null;
+  $$('.rv').forEach(function(el){ if(io) io.observe(el); else { el.classList.add('in'); $$('.fill',el).forEach(function(f){f.style.width=f.dataset.w+'%'}); $$('[data-count]',el).forEach(function(c){c.textContent=c.dataset.count}); } });
+
+  /* Task A stepper */
+  var steps=$$('#stepList li'), idx=-1, timer=null;
+  function show(i){
+    idx=(i+steps.length)%steps.length;
+    steps.forEach(function(li,k){ li.classList.toggle('active',k===idx); });
+    $$('[data-step]').forEach(function(el){ if(el.tagName.toLowerCase()!=='li') el.classList.toggle('active',el.dataset.step==String(idx+1)); });
+  }
+  steps.forEach(function(li,k){ li.addEventListener('click',function(){ stop(); show(k); }); });
+  function stop(){ if(timer){clearInterval(timer);timer=null;$('#play').textContent='▶ Play';} }
+  $('#play').addEventListener('click',function(){ if(timer){stop();return;} $('#play').textContent='⏸ Pause'; show(idx+1); timer=setInterval(function(){show(idx+1)},3200); });
+  $('#next').addEventListener('click',function(){stop();show(idx+1)});
+  $('#prev').addEventListener('click',function(){stop();show(idx-1)});
+
+  /* Mudharabah calculator */
+  var fmt=function(n){return 'RM'+Math.round(n).toLocaleString('en-US')};
+  function calc(){
+    var cap=Math.max(0,+$('#cap').value||0), pr=+$('#prof').value||0, ps=+$('#psr').value/100, neg=$('#neg').checked;
+    $('#psrV').textContent=Math.round(ps*100);
+    var fee=0.075*cap, inv, mud, msg, ok=true, out;
+    if(pr>=0){
+      inv=pr*ps; mud=pr*(1-ps);
+      out=[['Investor profit share',fmt(inv),'good'],['Investors receive in total',fmt(cap+inv),'good'],['Mudharib profit share',fmt(mud)],['Platform fee (7.5% of funds)',fmt(fee)],['Mudharib after fee',fmt(mud-fee),(mud-fee<0?'bad':'')]];
+      msg='Profit is split '+Math.round(ps*100)+':'+Math.round((1-ps)*100)+' as agreed in the Master Mudharabah Crowdfunding Agreement. Investors get their capital back plus their share.';
+      $('#sInv').style.width=(ps*100)+'%'; $('#sMud').style.width=((1-ps)*100)+'%';
+    }else{
+      var loss=-pr;
+      if(neg){ out=[['Loss borne by investors','RM0','good'],['Loss borne by mudharib',fmt(loss),'bad'],['Investors receive in total',fmt(cap),'good'],['Platform fee (7.5% of funds)',fmt(fee)]];
+        msg='Because the loss comes from negligence or breach of terms, the mudharib bears it (Ramli et al., 2025, p. 45).'; }
+      else { out=[['Loss borne by investors',fmt(loss),'bad'],['Loss borne by mudharib','RM0 (loses effort)'],['Investors receive in total',fmt(Math.max(0,cap-loss)),'bad'],['Platform fee (7.5% of funds)',fmt(fee)]];
+        msg='In mudharabah, the capital provider bears the financial loss unless the mudharib is negligent or breaches the terms (Ramli et al., 2025, p. 45). This is why Shariah-compliant equity is risk sharing, not guaranteed return.'; ok=false; }
+      $('#sInv').style.width=(neg?0:100)+'%'; $('#sMud').style.width=(neg?100:0)+'%';
+    }
+    $('#calcOut').innerHTML=out.map(function(o){return '<div class="'+(o[2]||'')+'">'+o[0]+'<b>'+o[1]+'</b></div>'}).join('');
+    var m=$('#calcMsg'); m.textContent=msg; m.className='verdict '+(ok?'ok':'no');
+  }
+  ['cap','prof','psr','neg'].forEach(function(id){ $('#'+id).addEventListener('input',calc); }); calc();
+
+  /* Investor limit checker */
+  function lim(){
+    var t=$('#ityp').value, a=+$('#iamt').value||0, p=+$('#iprev').value||0, tot=a+p, m=$('#limMsg'), ok=true, txt='';
+    if(t==='retail'){
+      if(a>5000){ok=false;txt='Not allowed: a retail investor may invest at most RM5,000 in a single investment.';}
+      else if(tot>50000){ok=false;txt='Not allowed: total would be '+fmt(tot)+', above the retail limit of RM50,000 in 12 months.';}
+      else txt='Allowed: within RM5,000 per investment and RM50,000 in 12 months (total '+fmt(tot)+').';
+    }else if(t==='angel'){
+      if(tot>500000){ok=false;txt='Not allowed: total would be '+fmt(tot)+', above the angel limit of RM500,000 in 12 months.';}
+      else txt='Allowed: total '+fmt(tot)+' is within the RM500,000 angel limit.';
+    }else txt='Allowed: sophisticated investors have no investment limit (SC, 2024, Q17).';
+    m.textContent=txt+' (Source: SC FAQ Q17.)'; m.className='verdict '+(ok?'ok':'no');
+  }
+  ['ityp','iamt','iprev'].forEach(function(id){ $('#'+id).addEventListener('input',lim); }); lim();
+
+  /* Institution map */
+  var sel=null;
+  $$('.chip').forEach(function(c){
+    function go(){ var k=c.dataset.k, row=document.getElementById('r-'+k); if(!row) return;
+      if(sel) sel.classList.remove('sel'); c.classList.add('sel'); sel=c;
+      $('#mapPanel').innerHTML='<b>'+row.cells[1].textContent+'</b> ('+row.cells[0].textContent+')<br>'+row.cells[2].innerHTML; }
+    c.addEventListener('click',go); c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();go();} });
+  });
+
+  /* Quiz */
+  var Q=[
+    {q:'Which contract describes Ata Plus acting as the investors\' agent that finds the crowd?',o:['Murabahah','Wakalah','Ijarah','Tawarruq'],a:1,w:'Ata Plus acts as agent under wakalah (Ramli et al., 2025, p. 44).'},
+    {q:'How long is the cooling-off period for ECF investors?',o:['3 business days','6 business days','14 business days','30 days'],a:1,w:'Six business days (SC, 2024, Q18).'},
+    {q:'In mudharabah, who bears a financial loss if the mudharib was not negligent?',o:['The mudharib','The platform','The investor (capital provider)','The Securities Commission'],a:2,w:'The investor bears the loss unless the mudharib is negligent or breaches terms (p. 45).'},
+    {q:'What is the main Shariah governance gap the article finds at Ata Plus?',o:['No trust account','No Shariah advisor or supervisory board','No SC registration','No profit-sharing ratio'],a:1,w:'Ata Plus has no Shariah advisor, so it is "Shariah-friendly" (pp. 48-49, 51).'},
+    {q:'According to the SC FAQ (revised Feb 2024), how much can an issuer raise through ECF platforms over its lifetime?',o:['RM3 million','RM5 million','RM20 million','No limit'],a:2,w:'RM20 million, excluding own capital and private placement (SC, 2024, Q12).'}
+  ], score=0, done=0, box=$('#quizBox');
+  box.innerHTML=Q.map(function(x,i){ return '<div class="q" data-i="'+i+'"><p>'+(i+1)+'. '+x.q+'</p>'+x.o.map(function(o,j){return '<button class="opt" data-j="'+j+'">'+o+'</button>'}).join('')+'<div class="why">'+x.w+'</div></div>'; }).join('')+'<div class="verdict ok" id="qres" style="display:none"></div><button class="btn alt" id="qretry" style="display:none;margin-top:10px">Try again</button>';
+  box.addEventListener('click',function(e){
+    var b=e.target.closest('.opt'); if(!b) return; var q=b.closest('.q'); if(q.dataset.done) return; q.dataset.done=1; done++;
+    var i=+q.dataset.i, j=+b.dataset.j; $$('.opt',q).forEach(function(o,k){ if(k===Q[i].a) o.classList.add('right'); });
+    if(j===Q[i].a) score++; else b.classList.add('wrong'); $('.why',q).style.display='block';
+    if(done===Q.length){ var r=$('#qres'); r.style.display='block'; r.textContent='You scored '+score+' / '+Q.length+'.'; r.className='verdict '+(score>=4?'ok':'no'); $('#qretry').style.display='inline-block'; }
+  });
+  box.addEventListener('click',function(e){ if(e.target.id==='qretry') location.hash='#quiz', location.reload(); });
+})();
+</script>
+</body>
+</html>
